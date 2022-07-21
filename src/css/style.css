@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    background-size: cover;
+    height: 100vh;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}
+.input {
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: .3rem .4rem;
+    
+}
+
+.button {
+    font-size: .6rem;
+    max-height: 1rem;
+    border: none;
+    border-radius: 8px;
+    padding: .3rem;
+    
+
+
+}
+.titulo {
+    padding: 1rem 1rem;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+
+.titulo:hover {
+    color: aliceblue;
+    background-color: rgb(146, 146, 163);
+}
+.temp {
+    padding: 2rem;
+}
+
+.info-chuva {
+    position: absolute;
+    left: 200px;
+}
+
+.info-vento {
+    position: absolute;
+    right: 200px;
+}
+
+#city {
+    font-size: 1.2rem;
+}
+
+.forecast {
+    font-size: 1.7rem;
+    position: absolute;
+    right: 190px;
+    bottom: 120px;
+    
+    
+}
+.forecast__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    font-size: 1rem;
+
+}
+
+.forecast__item--info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding-left: 1rem;
+    font-size: 1rem;
+    
+}
+
+.forecast__item--date {
+    background-color: #d6d4d4;
+    padding: 1.2rem 1.2rem;
+    border-radius: 100%;
+    font-size: inherit;
+
+}
+
+.tempMaxMin {
+    font-size: inherit;
+}
+
+.humidity {
+    font-size: inherit;
+}
+
+.weather-description {
+    font-size: 1.3rem;
+    
+}

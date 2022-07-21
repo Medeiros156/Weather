@@ -5,28 +5,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 
 <body>
     <div class="container">
         <nav class="navbar">
-            <form action="">
+            <form action="submit" id="form">
                 <input type="text" class="input">
-                <button class="button">   </button>
+                <button type="submit" class="button"> </button>
             </form>
+            <button class="button" id="toggleBackground"></button>
         </nav>
         <h1 class="titulo update">Weather</h1>
-        <h2 class="temp"></h2>
+        <span id="city"></span>
+        <h2 id="temp"></h2>
         <div class="info-chuva">
             <h4>Chuva</h4>
-            <p class="info-chuva__data"></p>
+            <p id="info-chuva__data"></p>
         </div>
         <div class="info-vento">
             <h4>Vento</h4>
-            <p class="info-vento__data"></p>
+            <p id="info-vento__data"></p>
         </div>
+        <section class="forecast">
+            <!-- |||||||||||||||||||||||||||||||| -->
+            <div class="forecast__item">
+                <div class="forecast__item--date">
+                    sex
+                </div>
+                <div class="forecast__item--info">
+                    <div class="icon">
+                        <img src="" alt="">
+                    </div>
+                    <div class="tempMaxMin">
+                        <p class="tempMax">Max: 22</p>
+                        <p class="tempMin">Min: 12</p>
+                    </div>
+                    <div class="humidity">
+                        23%
+                    </div>
+                    <p class="weather-description">Lorem ipsum dolor sit amet consectetur </p>
+
+                </div>
+            </div>
+            <!-- |||||||||||||||||||||||||||||||| -->
+            <!-- |||||||||||||||||||||||||||||||| -->
+            <div class="forecast__item">
+                <div class="forecast__item--date">
+                    sab
+                </div>
+                <div class="forecast__item--info">
+                    <div class="icon">
+                        <img src="" alt="">
+                    </div>
+                    <div class="tempMaxMin">
+                        <p class="tempMax">Max: 22</p>
+                        <p class="tempMin">Min: 12</p>
+                    </div>
+                    <div class="humidity">
+                        23%
+                    </div>
+                    <p class="weather-description">Lorem ipsum dolor sit amet consectetur </p>
+
+                </div>
+            </div>
+            <!-- |||||||||||||||||||||||||||||||| -->
+        </section>
+
 
     </div>
 
@@ -34,8 +81,8 @@
 
 </body>
 <script src="../node_modules/jquery/dist/jquery.js"></script>
-<script src="api.js"></script>
-<script src="index.js"></script>
-<script src="Background.js"></script>
+<script src="./js/api.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/Background.js"></script>
 
 </html>
