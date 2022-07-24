@@ -18,61 +18,92 @@
             </form>
             <button class="button" id="toggleBackground"></button>
         </nav>
-        <h1 class="titulo update">Weather</h1>
-        <span id="city"></span>
-        <h2 id="temp"></h2>
-        <div class="info-chuva">
-            <h4>Chuva</h4>
-            <p id="info-chuva__data"></p>
+        <div class="info-main card">
+            <h1 class="titulo update">Weather</h1>
+
+            <span class="city" id="city"></span>
+            <h2 class="temp" id="temp"></h2>
         </div>
-        <div class="info-vento">
-            <h4>Vento</h4>
-            <p id="info-vento__data"></p>
+        <div class="info-chuva card">
+            <div class="info-chuva__content">
+
+                <h4>Chuva</h4>
+                <p id="info-chuva__data"></p>
+            </div>
         </div>
-        <section class="forecast">
-            <!-- |||||||||||||||||||||||||||||||| -->
-            <div class="forecast__item">
-                <div class="forecast__item--date">
-                    sex
+        <div class="info-vento card">
+            <div class="info-vento__content">
+                <h4>Vento</h4>
+                <p id="info-vento__data"></p>
+            </div>
+    </div>
+    </div>
+    <section class="forecast card">
+        <!-- |||||||||||||||||||||||||||||||| -->
+        <div class="forecast__item">
+            <div class="forecast__item--date" id="date-8">
+                
+            </div>
+            <div class="forecast__item--info">
+                <div class="icon">
+                    <img src="" alt="">
                 </div>
-                <div class="forecast__item--info">
-                    <div class="icon">
-                        <img src="" alt="">
-                    </div>
-                    <div class="tempMaxMin">
-                        <p class="tempMax">Max: 22</p>
-                        <p class="tempMin">Min: 12</p>
-                    </div>
-                    <div class="humidity">
-                        23%
-                    </div>
-                    <p class="weather-description">Lorem ipsum dolor sit amet consectetur </p>
+                <div class="tempMaxMin">
+                    <p class="tempMax" id="tempMax-8"></p>
+                    <p class="tempMin" id="tempMin-8"></p>
+                </div>
+                <div class="humidity" id="humidity-8">
 
                 </div>
+                <p class="description" id="description-8"></p>
+
             </div>
-            <!-- |||||||||||||||||||||||||||||||| -->
-            <!-- |||||||||||||||||||||||||||||||| -->
-            <div class="forecast__item">
-                <div class="forecast__item--date">
-                    sab
+        </div>
+        <!-- |||||||||||||||||||||||||||||||| -->
+        <!-- |||||||||||||||||||||||||||||||| -->
+        <div class="forecast__item">
+            <div class="forecast__item--date" id="date-16">
+                
+            </div>
+            <div class="forecast__item--info">
+                <div class="icon">
+                    <img src="" alt="">
                 </div>
-                <div class="forecast__item--info">
-                    <div class="icon">
-                        <img src="" alt="">
-                    </div>
-                    <div class="tempMaxMin">
-                        <p class="tempMax">Max: 22</p>
-                        <p class="tempMin">Min: 12</p>
-                    </div>
-                    <div class="humidity">
-                        23%
-                    </div>
-                    <p class="weather-description">Lorem ipsum dolor sit amet consectetur </p>
+                <div class="tempMaxMin">
+                    <p class="tempMax" id="tempMax-16"></p>
+                    <p class="tempMin" id="tempMin-16"></p>
+                </div>
+                <div class="humidity" id="humidity-16">
 
                 </div>
+                <p class="description" id="description-16"></p>
+
             </div>
-            <!-- |||||||||||||||||||||||||||||||| -->
-        </section>
+        </div>
+        <!-- |||||||||||||||||||||||||||||||| -->
+        <!-- |||||||||||||||||||||||||||||||| -->
+        <div class="forecast__item">
+            <div class="forecast__item--date" id="date-24">
+                
+            </div>
+            <div class="forecast__item--info">
+                <div class="icon">
+                    <img src="" alt="">
+                </div>
+                <div class="tempMaxMin">
+                    <p class="tempMax" id="tempMax-24"></p>
+                    <p class="tempMin" id="tempMin-24"></p>
+                </div>
+                <div class="humidity" id="humidity-24">
+
+                </div>
+                <p class="description" id="description-24"></p>
+
+            </div>
+        </div>
+        <!-- |||||||||||||||||||||||||||||||| -->
+
+    </section>
 
 
     </div>
@@ -81,8 +112,11 @@
 
 </body>
 <script src="../node_modules/jquery/dist/jquery.js"></script>
-<script src="./js/api.js"></script>
+<script src="./js/apiCurrent.js"></script>
+<script src="./js/apiForecast.js"></script>
+<script src="./js/apiImage.js"></script>
 <script src="./js/index.js"></script>
-<script src="./js/Background.js"></script>
+<script src="./js/background.js"></script>
+<script src="./js/date.js"></script>
 
 </html>

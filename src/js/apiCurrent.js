@@ -22,19 +22,29 @@ function createData(data) {
 	let vento = Math.round((data.wind.speed) * 3.6)
 	let temp = Math.round(data.main.temp)
 	let city = data.name
+	let lat = data.coord.lat
+	let lon = data.coord.lon
 	let ls = localStorage
 	$("#city").text(city)
 	createRain(chuva);
 	createWind(vento);
 	createTemp(temp);
-	achaTema(vento, chuva, temp)
-	ls.setItem('chuva', chuva)
-	ls.setItem('vento', vento)
-	ls.setItem('temp', temp)
-	ls.setItem('city', city)
+	
+	ls.setItem('chuva', chuva);
+	ls.setItem('vento', vento);
+	ls.setItem('temp', temp);
+	ls.setItem('city', city);
+	ls.setItem('lat', lat);
+	ls.setItem('lon', lon);
+
 	
 
 };
+
+/* function createForecastData(lat, lon) {
+	console.log(lat,lon);
+	console.log("forecast");
+} */
 
 
 function showCity(data) {

@@ -1,7 +1,8 @@
-var sun = ["sun-1.jpg", "sun-2.jpg", "sun-3.jpg"];
+/* var sun = ["sun-1.jpg", "sun-2.jpg", "sun-3.jpg"];
 var rain = ["rain-1.jpg", "rain-2.jpg"];
 var storm = ["storm-1.jpg", "storm-2.jpg", "storm-3.jpg"];
-var cloudy = ["cloudy-1.jpg", "cloudy-2.jpg"];
+var cloudy = ["cloudy-1.jpg", "cloudy-2.jpg"]; */
+
 
 var tema = []
 function achaTema(vento, chuva, temp) {
