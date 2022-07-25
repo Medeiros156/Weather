@@ -4,10 +4,11 @@ const key = "ca481617449db955b575c8299b9ec9e2"
 $(function () {
     update();
     formUpdate();
-    toggleBackground()
     createRain(ls.getItem('chuva'));
     createWind(ls.getItem('vento'));
     createTemp(ls.getItem('temp'));
+
+    catchForecastData22()
 });
 
 function update() {
@@ -15,7 +16,7 @@ function update() {
         console.log("click");
         catchData(ls.getItem('city'));
         catchForecastData(ls.getItem('lat'), ls.getItem('lon'))
-        createBackground();
+        createBackground(dataWeather[ls.getItem('descriptionId')]);
     })
 }
 
@@ -46,41 +47,25 @@ function formUpdate() {
         event.preventDefault();
         let cityName = $(".input").first().val();
         catchData(cityName);
+        
         catchForecastData(ls.getItem('lat'), ls.getItem('lon'))
-        createBackground();
+        
+        createBackground(dataWeather[ls.getItem('descriptionId')]);
+        
         $(".input").val("")
     })
 }
 
-
+function catchForecastData22() {
+    $("#changeBackground").on("click", () => {
+        catchForecastData2(-22.9028, -43.2075)
+    })
+}
 function createDate(date, n) {
     $(`#date-${n}`).text(date)
 
 }
 
-function toggleBackground() {
-    $("#toggleBackground").on("click", () => {
-
-        catchImage("céu limpo");
-        catchImage("nuvens quebradas");
-        catchImage("nuvens dispersas");
-        catchImage("nublado");
-        catchImage("chuva fraca");
-        catchImage("céu pouco nublado");
-       
-    })
-}
-
-function createBackground() {
-
-    /* LOGICA PARA SELECIONAR QUAL BACKGROUND */
-    
-    let dataClimate = ls.getItem("imagesUrl-sun")
-    let urlBackground = dataClimate.split(",")
-    let random = Math.round(Math.random()*100);
-    $(".container").css(`background-image`, `url(${urlBackground[random]})`)
-
-}
 
 
 

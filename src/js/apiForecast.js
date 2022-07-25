@@ -20,6 +20,8 @@ function catchForecastData(lat, lon) {
 	});
 }
 
+
+
 function createForecastData(data, n) {
     console.log(data);
 	let forecast1 = data.list[n]
