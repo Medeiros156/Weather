@@ -15,7 +15,7 @@ function update() {
     $(".update").on("click", () => {
         console.log("click");
         catchData(ls.getItem('city'));
-        catchForecastData(ls.getItem('lat'), ls.getItem('lon'))
+        catchForecastData(ls.getItem('lat'), ls.getItem('lon'));
         createBackground(dataWeather[ls.getItem('descriptionId')]);
     })
 }

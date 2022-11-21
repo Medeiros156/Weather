@@ -11,7 +11,7 @@ function catchData(city) {
 	$.ajax(settingsCity).done(function (response) {
 		const data = response;
 		showCity(data)
-		console.log(data);
+		
 		createData(data)
 		return data
 	});
@@ -51,6 +51,5 @@ function createData(data) {
 
 function showCity(data) {
 	const v = data.id
-	console.log(v);
 }
 

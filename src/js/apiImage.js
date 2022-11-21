@@ -4,11 +4,10 @@ function catchImage(keyWord) {
     const settingsImage = {
         "async": true,
         "crossDomain": true,
-        "url": `https://google-image-search1.p.rapidapi.com/v2/?q=${keyWord}&hl=en`,
+        "url": `https://api.unsplash.com/search/photos?query=sun`,
         "method": "GET",
         "headers": {
-            "X-RapidAPI-Key": "2dba2fe63emsh7ea7002236d7713p1c7fc3jsnbbcf026c7dc8",
-            "X-RapidAPI-Host": "google-image-search1.p.rapidapi.com"
+            "Authorization": "Client-ID lt01JJdVhTVWIrFUryd22BhAf7x99UZtMfWpPFt_joU"
         }
     }
 
@@ -16,7 +15,8 @@ function catchImage(keyWord) {
     $.ajax(settingsImage).done(function (response) {
         console.log(response);
 
-        const data = response.response;
+        const data = response.results;
+        console.log(data);
         createImage(data, keyWord)
         
 
@@ -25,21 +25,19 @@ function catchImage(keyWord) {
 }
 
 function createImage(data, keyWord) {
-    let listaObj = data.images
     const listaUrl = []
-    for (let n = 0; n < listaObj.length; n++) {
-        let url = listaObj[n].image.url
+    console.log(data);
+    for (let n = 0; n < data.length; n++) {
+        let url = data[n].links.html
         listaUrl.push(url);
         
     }
-    console.log(listaUrl);
+    console.log(typeof(listaUrl));
 
     ls.setItem(`imagesUrl-${keyWord}`, listaUrl)
-    
+       
 
     
-
-    /* let urlImage = data.images[random].image.url */
-    /* createBackground(urlImage) */
-    /* criar Json com array de url no ls  */
+    createBackground(keyWord) 
+     
 }
