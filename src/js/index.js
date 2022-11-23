@@ -8,15 +8,14 @@ $(function () {
     createWind(ls.getItem('vento'));
     createTemp(ls.getItem('temp'));
 
-    catchForecastData22()
+    /* catchForecastData22() */
 });
 
 function update() {
     $(".update").on("click", () => {
-        console.log("click");
         catchData(ls.getItem('city'));
         catchForecastData(ls.getItem('lat'), ls.getItem('lon'));
-        createBackground(dataWeather[ls.getItem('descriptionId')]);
+        createBackground(ls.getItem('descriptionMain'));
     })
 }
 
@@ -26,15 +25,11 @@ function createRain(precip) {
 function createWind(wind_spd) {
     $("#info-vento__data").text(wind_spd + " Km/h")
 }
-function createTemp(temp) {
-    $("#temp").text(temp + " °")
+
+function createTemp(temp, n) {
+    $(`#temp-${n}`).text(temp + " °")
 }
-function createTempMax(tempMax, n) {
-    $(`#tempMax-${n}`).text("Max: " + tempMax + " °")
-}
-function createTempMin(tempMin, n) {
-    $(`#tempMin-${n}`).text("Min: " + tempMin + " °")
-}
+
 function createHumidity(humidity, n) {
     $(`#humidity-${n}`).text(humidity + "%")
 }
@@ -50,7 +45,7 @@ function formUpdate() {
         
         catchForecastData(ls.getItem('lat'), ls.getItem('lon'))
         
-        createBackground(dataWeather[ls.getItem('descriptionId')]);
+        createBackground(dataWeather[ls.getItem('descriptionMain')]);
         
         $(".input").val("")
     })
@@ -61,8 +56,9 @@ function catchForecastData22() {
         catchForecastData2(-22.9028, -43.2075)
     })
 }
-function createDate(date, n) {
-    $(`#date-${n}`).text(date)
+function createDate(date, i) {
+    console.log(date);
+    $(`#date-${i}`).text(date)
 
 }
 

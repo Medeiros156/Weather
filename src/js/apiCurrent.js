@@ -18,13 +18,14 @@ function catchData(city) {
 }
 
 function createData(data) {
+	console.log(data);
 	let chuva = data.rain ? data.rain["1h"] : 0;
 	let vento = Math.round((data.wind.speed) * 3.6)
 	let temp = Math.round(data.main.temp)
 	let city = data.name
 	let lat = data.coord.lat
 	let lon = data.coord.lon
-	let descriptionId = data.weather[0].id
+	let descriptionMain = data.weather[0].main
 	let ls = localStorage
 	$("#city").text(city)
 	createRain(chuva);
@@ -37,7 +38,7 @@ function createData(data) {
 	ls.setItem('city', city);
 	ls.setItem('lat', lat);
 	ls.setItem('lon', lon);
-	ls.setItem('descriptionId', descriptionId);
+	ls.setItem('descriptionMain', descriptionMain);
 
 	
 
