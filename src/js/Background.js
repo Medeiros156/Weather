@@ -14,6 +14,6 @@ function changeBackground(description) {
   console.log(dataClimate);
   let random = Math.round(Math.random() * 10);
   
-  $(".container").css(`background-image`, `url(${dataClimate[random]}&w=1500&dpr=2)`);
+  $("body").css(`background-image`, `url(${dataClimate[random]}&w=1500&dpr=2)`);
   
 }

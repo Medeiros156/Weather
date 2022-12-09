@@ -4,7 +4,7 @@ function catchData(city) {
 	const settingsCity = {
 		"async": true,
 		"crossDomain": true,
-		"url": `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=ca481617449db955b575c8299b9ec9e2&units=metric`,
+		"url": `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=ca481617449db955b575c8299b9ec9e2&units=metric&lang=pt`,
 		"method": "GET",
 	};
 
@@ -19,18 +19,19 @@ function catchData(city) {
 
 function createData(data) {
 	console.log(data);
+	let ls = localStorage
 	let chuva = data.rain ? data.rain["1h"] : 0;
 	let vento = Math.round((data.wind.speed) * 3.6)
 	let temp = Math.round(data.main.temp)
 	let city = data.name
 	let lat = data.coord.lat
 	let lon = data.coord.lon
-	let descriptionMain = data.weather[0].main
-	let ls = localStorage
+	let descriptionMain = toUpperCase(data.weather[0].description)
 	$("#city").text(city)
 	createRain(chuva);
 	createWind(vento);
-	createTemp(temp);
+	createTemp(temp,0);
+	createIcon(icon,0)
 	
 	ls.setItem('chuva', chuva);
 	ls.setItem('vento', vento);

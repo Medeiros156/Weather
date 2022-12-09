@@ -11,18 +11,21 @@
 
 <body>
     <div class="container">
+
+        <div class="navbarIcon">|||</div>
         <nav class="navbar">
             <form action="submit" id="form">
                 <input type="text" class="input">
-                <button type="submit" class="button"> </button>
+                <button type="submit" class="button">Search</button>
             </form>
-            <button class="button" id="changeBackground"></button>
+            
         </nav>
         <div class="info-main card">
-            <h1 class="titulo update">Weather</h1>
+            <h1 class="titulo update"></h1>
 
             <span class="city" id="city"></span>
-            <h2 class="temp" id="temp"></h2>
+            <span id="icon-0"></span>
+            <h2 class="temp" id="temp-0"></h2>
         </div>
         <div class="info-chuva card">
             <div class="info-chuva__content">
@@ -40,14 +43,21 @@
     </div>
     <section class="forecast card">
         <!-- |||||||||||||||||||||||||||||||| -->
+
+        <div class="forecastC">
+            <span>C</span>
+        </div>
+        <div class="forecastU">
+
+            <span>U</span>
+        </div>
         <div class="forecast__item">
             <div class="forecast__item--date" id="date-1">
                 
             </div>
             <div class="forecast__item--info">
-                <div class="icon">
-                    <img src="" alt="">
-                </div>
+                <img id="icon-1">
+            </img>
                 <div class="tempMaxMin">
                     <p class="tempForecast" id="temp-1"></p>
                 </div>
@@ -65,9 +75,8 @@
                 
             </div>
             <div class="forecast__item--info">
-                <div class="icon">
-                    <img src="" alt="">
-                </div>
+                <img id="icon-2">
+            </img>
                 <div class="tempMaxMin">
                     <p class="tempForecast" id="temp-2"></p>
                     
@@ -86,9 +95,8 @@
                 
             </div>
             <div class="forecast__item--info">
-                <div class="icon">
-                    <img src="" alt="">
-                </div>
+                <img id="icon-3">
+            </img>
                 <div class="tempMaxMin">
                     <p class="tempForecast" id="temp-3"></p>
                 </div>
