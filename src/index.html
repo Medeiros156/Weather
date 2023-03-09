@@ -7,12 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <title>Weather App</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+      </style>
 </head>
 
 <body>
     <div class="container">
 
-        <div class="navbarIcon">|||</div>
+        <a class="navbarIcon">|||</a>
         <nav class="navbar">
             <form action="submit" id="form">
                 <input type="text" class="input">
@@ -24,8 +27,12 @@
             <h1 class="titulo update"></h1>
 
             <span class="city" id="city"></span>
-            <span id="icon-0"></span>
-            <h2 class="temp" id="temp-0"></h2>
+            <div class="info-main_bottom">
+
+                <img id="icon-0"></img>
+                <h2 class="temp" id="temp-0"></h2>
+                <img id="arrow" src="../Assets/icons8-arrow-100.png"></img>
+            </div>
         </div>
         <div class="info-chuva card">
             <div class="info-chuva__content">
@@ -40,16 +47,16 @@
                 <p id="info-vento__data"></p>
             </div>
     </div>
-    </div>
+
     <section class="forecast card">
         <!-- |||||||||||||||||||||||||||||||| -->
 
         <div class="forecastC">
-            <span>C</span>
+            <img src="../Assets/icons8-temperature-48.png" alt="termometer">
         </div>
         <div class="forecastU">
 
-            <span>U</span>
+            <img src="../Assets/icons8-moisture-64.png" alt="humidity">
         </div>
         <div class="forecast__item">
             <div class="forecast__item--date" id="date-1">
@@ -110,7 +117,7 @@
         <!-- |||||||||||||||||||||||||||||||| -->
 
     </section>
-
+</div>
 
     </div>
 
@@ -118,12 +125,10 @@
 
 </body>
 <script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="./js/config.js"></script>
 <script src="./js/apiCurrent.js"></script>
 <script src="./js/apiForecast.js"></script>
 <script src="./js/apiImage.js"></script>
 <script src="./js/index.js"></script>
-<script src="./js/background.js"></script>
-<script src="./js/date.js"></script>
-<script src="./js/dataWeather.js"></script>
 
 </html>

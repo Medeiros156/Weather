@@ -10,25 +10,34 @@ $(function () {
   createRain(ls.getItem("chuva"));
   createWind(ls.getItem("vento"));
   createTemp(ls.getItem("temp"));
-  
+
   update();
-  /* catchForecastData22() */
 });
 
 $(".update").on("click", () => {
   update();
 });
 
-$(".navbarIcon").click(()=>{
-  $(".navbar form").toggleClass("none")
-  window.scrollTo(0,0)
-})
+$(".navbarIcon").click(() => {
+  $(".navbar").toggleClass("show");
+  window.scrollTo(0, 0);
+});
 
 function update() {
   catchData(ls.getItem("city"));
   catchForecastData(ls.getItem("lat"), ls.getItem("lon"));
-  createBackground(ls.getItem("descriptionMain"));
-  createTitle(ls.getItem("descriptionMain"));
+}
+
+function formUpdate() {
+  $("#form").on("submit", (event) => {
+    event.preventDefault();
+    let cityName = $(".input").first().val();
+
+    ls.setItem("city", cityName);
+
+    update();
+    $(".input").val("");
+  });
 }
 
 function createTitle(desc) {
@@ -36,14 +45,14 @@ function createTitle(desc) {
 }
 
 function createRain(precip) {
-  $("#info-chuva__data").text(precip + " mm");
+  $("#info-chuva__data").text(precip + "mm");
 }
 function createWind(wind_spd) {
-  $("#info-vento__data").text(wind_spd + " Km/h");
+  $("#info-vento__data").text(wind_spd + "Km/h");
 }
 
 function createTemp(temp, n) {
-  $(`#temp-${n}`).text(temp + " °");
+  $(`#temp-${n}`).text(temp + "°C");
 }
 
 function createHumidity(humidity, n) {
@@ -53,47 +62,38 @@ function createDescription(description, n) {
   $(`#description-${n}`).text(description);
 }
 
-function formUpdate() {
-  $("#form").on("submit", (event) => {
-    event.preventDefault();
-    let cityName = $(".input").first().val();
-    catchData(cityName);
-
-    catchForecastData(ls.getItem("lat"), ls.getItem("lon"));
-
-    createBackground(dataWeather[ls.getItem("descriptionMain")]);
-
-    $(".input").val("");
-  });
-}
-
-function catchForecastData22() {
-  $("#changeBackground").on("click", () => {
-    catchForecastData2(-22.9028, -43.2075);
-  });
-}
 function createDate(date, i) {
-  console.log(date);
   $(`#date-${i}`).text(date);
 }
 
-function createIcon(icon, n){
-  $(`#icon-${n}`).attr('src',`http://openweathermap.org/img/w/${icon}.png`)
+function createIconMain(icon, n) {
+  $(`#icon-${n}`).attr(
+    "src",
+    `http://openweathermap.org/img/wn/${icon}@4x.png`
+  );
+}
+function createIcon(icon, n) {
+  $(`#icon-${n}`).attr("src", `http://openweathermap.org/img/wn/${icon}.png`);
 }
 
-
-
-
-
+function rotateArrow(deg) {
+  console.log("rotate" + deg);
+  $("#arrow").css("transform", `rotate(${180 + deg}deg)`);
+}
 function toUpperCase(sentence) {
   const words = sentence.split(" ");
   for (let i = 0; i < words.length; i++) {
     words[i] = words[i][0].toUpperCase() + words[i].substr(1);
   }
 
-  words.join(" ")
-  let sen = words.toString()
-
-  return sen.replace(',', ' ');
+  words.join(" ");
+  let sen = words.toString();
+  return sen.replaceAll(",", " ");
 }
 
+function createDateData(dateString, n) {
+  let week = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
+  let dateObj = new Date(dateString);
+  let date = week[dateObj.getDay()];
+  createDate(date, n);
+}
